@@ -1,0 +1,56 @@
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  color: rgba(0, 0, 0, 0.87);
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+.page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 15px;
+}
+
+.error {
+  margin: auto;
+  max-width: 200px;
+  padding: 15px;
+}
+
+h1, h2, h3 {
+  color: #006064;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #dee4eb;
+  font-family: 'Aleo', serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.03);
+  border: 2px solid #dee4eb;
+}
+
+th {
+  border-bottom: 2px solid #dee4eb;
+}
+
+th, td {
+  padding: 10px;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+ul {
+  list-style: none;
+}
+
+.code {
+  font-family: 'Ubuntu Mono', monospace;
+}
