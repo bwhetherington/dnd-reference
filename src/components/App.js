@@ -1,8 +1,6 @@
 import React from 'react';
 import Markdown from './Markdown';
 import queryString from 'query-string';
-
-import paladin from '../markdown/paladin.md';
 import './App.css';
 
 function App(props) {
