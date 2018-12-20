@@ -16,6 +16,7 @@ html, body {
   margin: auto;
   max-width: 200px;
   padding: 15px;
+  background: black;
 }
 
 h1, h2, h3 {
@@ -25,6 +26,7 @@ h1, h2, h3 {
   padding-bottom: 5px;
   border-bottom: 2px solid #dee4eb;
   font-family: 'Aleo', serif;
+  font-weight: bold;
 }
 
 table {
@@ -47,9 +49,9 @@ tbody tr:nth-child(odd) {
   background: rgba(0, 0, 0, 0.03);
 }
 
-ul {
+/* ul {
   list-style: none;
-}
+} */
 
 .code {
   font-family: 'Ubuntu Mono', monospace;
