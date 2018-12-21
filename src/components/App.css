@@ -56,3 +56,16 @@ tbody tr:nth-child(odd) {
 .code {
   font-family: 'Ubuntu Mono', monospace;
 }
+
+.link {
+  cursor:pointer;
+  color:blue;
+  text-decoration:underline;
+}
+
+hr {
+  height: 2px;
+  width: 100%;
+  border: none;
+  background: #dee4eb;
+}
