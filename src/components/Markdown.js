@@ -1,27 +1,45 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import htmlParser from 'react-markdown/plugins/html-parser';
+import { parseHeader, flatten } from '../util';
+import './Markdown.css';
 
-function makeHeadingRenderer() {
-  let n = 0;
-  return function HeadingRenderer(props) {
-    const id = `${n}`;
-    n++;
-    return React.createElement('h' + props.level, { id }, props.children);
-  }
+const parseHtml = htmlParser({
+  isValidNode: node => node.type !== 'script'
+});
+
+
+function HeadingRenderer(props) {
+  const { level, children } = props;
+  const childrenArray = React.Children.toArray(children);
+  const text = childrenArray.reduce(flatten, '');
+  const id = text.toLowerCase().replace(/\*/g, '').trim().replace(/\W+/g, '-');
+  return React.createElement('h' + level, { id }, children);
+  // const { headerText, anchorText } = parseHeader(text);
+  // if (anchorText) {
+  //   return React.createElement('h' + level, { id: anchorText }, headerText);
+  // } else {
+  //   return React.createElement('h' + level, {}, children);
+  // }
 }
 
 function LinkRenderer(props) {
-  const { href } = props;
-  const hash = href.split(/#/)[1];
-  const encodedURI = encodeURIComponent(href);
-  const { origin, pathname } = window.location;
-  const newHref = hash !== undefined
-    ? `${origin}${pathname}?url=${encodedURI}#${hash}`
-    : `${origin}${pathname}?url=${encodedURI}`;
-  const onClick = () => {
-    window.location.href = newHref;
-  };
-  return <span className="link" onClick={onClick}>{props.children}</span>
+  const { href, children } = props;
+  const [url, hash] = href.split(/#/);
+  const [baseUrl] = url.split(/\?/);
+  if (typeof baseUrl === 'string' && baseUrl.endsWith('.md')) {
+    const encodedURI = encodeURIComponent(href);
+    const { origin, pathname } = window.location;
+    const newHref = hash !== undefined
+      ? `${origin}${pathname}?url=${encodedURI}#${hash}`
+      : `${origin}${pathname}?url=${encodedURI}`;
+    const onClick = () => {
+      window.location.href = newHref;
+    };
+    return <span className="link" onClick={onClick}>{children}</span>
+  } else {
+    return <a href={href}>{props.children}</a>;
+  }
 }
 
 export default class Markdown extends React.Component {
@@ -59,9 +77,8 @@ export default class Markdown extends React.Component {
     const { error, markdown } = this.state;
     if (error) {
       const { url } = this.props;
-      return <div className="error">Error loading resource: <span className="code">{url}</span></div>;
+      return <div className="error">Error loading resource: <pre><code>{url}</code></pre></div>;
     } else if (markdown !== null && markdown !== undefined) {
-      const HeadingRenderer = makeHeadingRenderer();
       const renderers = {
         heading: HeadingRenderer,
         link: LinkRenderer
@@ -70,7 +87,9 @@ export default class Markdown extends React.Component {
         <div className="page">
           <ReactMarkdown 
             source={markdown} 
-            renderers={renderers} 
+            renderers={renderers}
+            escapeHtml={false}
+            astPlugins={[parseHtml]}
           />
         </div>
       );

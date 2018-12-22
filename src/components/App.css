@@ -10,6 +10,7 @@ html, body {
   max-width: 1000px;
   margin: auto;
   padding: 15px;
+  padding-top: 0px;
 }
 
 .error {
@@ -19,22 +20,33 @@ html, body {
   background: black;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Aleo', serif;
+}
+
+h1, h2, h3, h4 {
   color: #006064;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 5px;
   border-bottom: 2px solid #dee4eb;
-  font-family: 'Aleo', serif;
   font-weight: bold;
+}
+
+h5, h6 {
+  margin: 0px;
+  font-size: 15px;
+}
+
+h6 {
+  font-weight: normal;
 }
 
 table {
   border-collapse: collapse;
-  width: 80%;
-  margin: auto;
   background: rgba(0, 0, 0, 0.03);
   border: 2px solid #dee4eb;
+  margin: 10px;
 }
 
 th {
@@ -49,18 +61,18 @@ tbody tr:nth-child(odd) {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* ul {
-  list-style: none;
-} */
-
-.code {
-  font-family: 'Ubuntu Mono', monospace;
+.link, a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 }
 
-.link {
-  cursor:pointer;
-  color:blue;
-  text-decoration:underline;
+.link:hover, a:hover {
+  text-decoration: underline;
+}
+
+.link:visited, a:visited  {
+  color: inherit;
 }
 
 hr {
@@ -69,3 +81,14 @@ hr {
   border: none;
   background: #dee4eb;
 }
+
+blockquote {
+  background: rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #428e92;
+  margin: 0px;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 10px;
+}
+

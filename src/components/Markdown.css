@@ -1,0 +1,10 @@
+.topBar {
+  color: rgba(0, 0, 0, 0.67);
+  background: white;
+  border-bottom: 2px solid #dee4eb;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
