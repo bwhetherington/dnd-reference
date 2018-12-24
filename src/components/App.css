@@ -47,7 +47,11 @@ table {
   border-collapse: collapse;
   background: rgba(0, 0, 0, 0.03);
   border: 2px solid #dee4eb;
-  margin: 10px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  padding: 10px;
 }
 
 th {

@@ -84,6 +84,7 @@ export default class Markdown extends React.Component {
             renderers={renderers}
             escapeHtml={false}
             astPlugins={[parseHtml]}
+            className="pbh"
           />
       );
     } else {
