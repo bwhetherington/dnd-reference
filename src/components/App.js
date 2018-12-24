@@ -6,10 +6,11 @@ import './App.css';
 function App(props) {
   const search = window.location.search;
   const { url } = queryString.parse(search);
+
   if (typeof url === 'string') {
-    return <Markdown url={url} />;
+    return <div className="page"><Markdown url={url} /></div>;
   } else {
-    return <div className="error">Please enter a valid URL</div>
+    return <div className="page">Please enter a valid URL</div>
   }
 }
 

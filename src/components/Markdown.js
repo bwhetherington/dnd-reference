@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import htmlParser from 'react-markdown/plugins/html-parser';
-import { parseHeader, flatten } from '../util';
+import Loading from './Loading';
+import { flatten } from '../util';
 import './Markdown.css';
 
 const parseHtml = htmlParser({
@@ -13,14 +14,8 @@ function HeadingRenderer(props) {
   const { level, children } = props;
   const childrenArray = React.Children.toArray(children);
   const text = childrenArray.reduce(flatten, '');
-  const id = text.toLowerCase().replace(/\*/g, '').trim().replace(/\W+/g, '-');
+  const id = text.toLowerCase().replace(/(\*|\(|\))/g, '').trim().replace(/\W+/g, '-');
   return React.createElement('h' + level, { id }, children);
-  // const { headerText, anchorText } = parseHeader(text);
-  // if (anchorText) {
-  //   return React.createElement('h' + level, { id: anchorText }, headerText);
-  // } else {
-  //   return React.createElement('h' + level, {}, children);
-  // }
 }
 
 function LinkRenderer(props) {
@@ -84,17 +79,15 @@ export default class Markdown extends React.Component {
         link: LinkRenderer
       };
       return (
-        <div className="page">
           <ReactMarkdown 
             source={markdown} 
             renderers={renderers}
             escapeHtml={false}
             astPlugins={[parseHtml]}
           />
-        </div>
       );
     } else {
-      return <div />;
+      return <Loading />;
     }
   }
 }

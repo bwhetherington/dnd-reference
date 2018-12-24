@@ -2,9 +2,19 @@
   color: rgba(0, 0, 0, 0.67);
   background: white;
   border-bottom: 2px solid #dee4eb;
+  padding: 10px;
 }
 
 .row {
   display: flex;
   flex-direction: row;
 }
+
+/* .section {
+  column-count: 2;
+}
+
+ul > li {
+  display: inline-block;
+  width: 100%;
+} */
