@@ -103,12 +103,22 @@ export default class Markdown extends React.Component {
         table: TableRenderer
       };
       return (
+<<<<<<< HEAD
         <ReactMarkdown
           source={markdown}
           renderers={renderers}
           escapeHtml={false}
           astPlugins={[parseHtml]}
         />
+=======
+          <ReactMarkdown 
+            source={markdown} 
+            renderers={renderers}
+            escapeHtml={false}
+            astPlugins={[parseHtml]}
+            className="pbh"
+          />
+>>>>>>> ecaee417bc25a4823863267c0735f17167092fc2
       );
     } else {
       return <Loading />;
