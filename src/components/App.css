@@ -1,5 +1,6 @@
-html, body {
-  font-family: 'Open Sans', sans-serif;
+html,
+body {
+  font-family: "Open Sans", sans-serif;
   color: rgba(0, 0, 0, 0.87);
   width: 100%;
   height: 100%;
@@ -21,11 +22,19 @@ html, body {
   background: black;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Aleo', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Aleo", serif;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: #006064;
   padding-left: 10px;
   padding-right: 10px;
@@ -34,7 +43,8 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 
-h5, h6 {
+h5,
+h6 {
   margin: 0px;
   font-size: 15px;
 }
@@ -47,14 +57,15 @@ table {
   border-collapse: collapse;
   background: rgba(0, 0, 0, 0.03);
   border: 2px solid #dee4eb;
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 th {
   border-bottom: 2px solid #dee4eb;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
 }
 
@@ -62,17 +73,20 @@ tbody tr:nth-child(odd) {
   background: rgba(0, 0, 0, 0.03);
 }
 
-.link, a {
+.link,
+a {
   cursor: pointer;
   color: inherit;
   text-decoration: none;
 }
 
-.link:hover, a:hover {
+.link:hover,
+a:hover {
   text-decoration: underline;
 }
 
-.link:visited, a:visited  {
+.link:visited,
+a:visited {
   color: inherit;
 }
 
@@ -92,4 +106,3 @@ blockquote {
   padding-right: 25px;
   margin: 10px;
 }
-

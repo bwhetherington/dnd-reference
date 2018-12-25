@@ -10,6 +10,12 @@
   flex-direction: row;
 }
 
+.tableContainer {
+  margin: 10px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 /* .section {
   column-count: 2;
 }
