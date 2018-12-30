@@ -65,24 +65,34 @@ export default class Markdown extends React.Component {
       const [href, anchor] = url.split(/#/);
       const response = await fetch(href);
       const markdown = await response.text();
-      this.setState({
-        ...this.state,
-        markdown
-      });
 
-      // Scroll to anchor
-      if (anchor !== undefined) {
-        const node = document.getElementById(anchor);
-        if (node !== null && node !== undefined) {
-          scrollTo(node);
+      if (markdown.startsWith('<!DOCTYPE html>')) {
+        // Page was not found
+        this.setState({
+          ...this.state,
+          error: true
+        });
+      } else {
+        // Page was found
+        this.setState({
+          ...this.state,
+          markdown
+        });
+  
+        // Scroll to anchor
+        if (anchor !== undefined) {
+          const node = document.getElementById(anchor);
+          if (node !== null && node !== undefined) {
+            scrollTo(node);
+          }
         }
-      }
-
-      // Set title based on header
-      const header = document.getElementById('topBar');
-      if (header) {
-        const text = header.innerText;
-        document.title = text;
+  
+        // Set title based on header
+        const header = document.getElementById('topBar');
+        if (header) {
+          const text = header.innerText;
+          document.title = text;
+        }
       }
     } catch (err) {
       console.log(err);

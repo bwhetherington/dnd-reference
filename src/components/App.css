@@ -7,8 +7,6 @@ body {
   margin: 0px;
 }
 
-
-
 h1,
 h2,
 h3,
@@ -25,9 +23,9 @@ h2,
 h3,
 h4 {
   color: #006064;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 5px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.1em;
   border-bottom: 2px solid #dee4eb;
   font-weight: bold;
 }
