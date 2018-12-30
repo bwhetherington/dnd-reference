@@ -1,5 +1,5 @@
 #topBar {
-  background: #f7f7f7;
+  background: #f2f2f2;
   position: fixed !important;
   top: 0;
   width: 150vw;
@@ -15,13 +15,6 @@
   font-family: 'Aleo';
   font-size: 1.2em;
   font-weight: bold;
-}
-
-.page {
-  max-width: 1000px;
-  margin: auto;
-  padding: 15px;
-  padding-top: 65px;
 }
 
 #topBar span, #topBar a {
