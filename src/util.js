@@ -18,3 +18,14 @@ export function flatten(text, child) {
     ? text + child
     : React.Children.toArray(child.props.children).reduce(flatten, text);
 }
+
+const HEADER_SIZE = parseInt('80px', 10);
+
+export function scrollTo(node) {
+  node.scrollIntoView(true);
+  const scrollY = window.scrollY;
+  // console.log(scrollY);
+  if (scrollY) {
+    window.scroll(0, scrollY - HEADER_SIZE);
+  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import htmlParser from "react-markdown/plugins/html-parser";
 import Loading from "./Loading";
-import { flatten } from "../util";
+import { scrollTo, flatten } from "../util";
 import "./Markdown.css";
 
 const parseHtml = htmlParser({
@@ -72,7 +72,7 @@ export default class Markdown extends React.Component {
       if (anchor !== undefined) {
         const node = document.getElementById(anchor);
         if (node !== null && node !== undefined) {
-          node.scrollIntoView(true);
+          scrollTo(node);
         }
       }
     } catch (err) {

@@ -10,7 +10,7 @@ function App(props) {
   if (typeof url === 'string') {
     return <div className="page"><Markdown url={url} /></div>;
   } else {
-    return <div className="page">Please enter a valid URL</div>
+    return <div className="page"><div className="error">Please enter a valid URL</div></div>;
   }
 }
 

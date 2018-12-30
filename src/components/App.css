@@ -7,20 +7,7 @@ body {
   margin: 0px;
 }
 
-.page {
-  max-width: 1000px;
-  /* min-height: 100%; */
-  margin: auto;
-  padding: 15px;
-  padding-top: 0px;
-}
 
-.error {
-  margin: auto;
-  max-width: 200px;
-  padding: 15px;
-  background: black;
-}
 
 h1,
 h2,
@@ -43,10 +30,26 @@ h4 {
   font-weight: bold;
 }
 
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
 h5,
 h6 {
   margin: 0px;
-  font-size: 15px;
+  font-size: 1em;
 }
 
 h6 {
@@ -105,4 +108,9 @@ blockquote {
   padding-left: 25px;
   padding-right: 25px;
   margin: 10px;
+}
+
+.loading, .error {
+  text-align: center;
+  font-size: 2em;
 }

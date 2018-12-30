@@ -1,8 +1,31 @@
 .topBar {
-  color: rgba(0, 0, 0, 0.67);
-  background: white;
+  background: #f7f7f7;
+  position: fixed !important;
+  top: 0;
+  width: 150vw;
+  margin-left: -25vw;
+  padding-left: 25vw;
+  padding-top: 10;
+  padding-bottom: 10;
+  /* color: white; */
+  float: center;
   border-bottom: 2px solid #dee4eb;
-  padding: 10px;
+  z-index: 100;
+  color: rgba(0, 0, 0, 0.3);
+  font-family: 'Aleo';
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 15px;
+  padding-top: 65px;
+}
+
+.topBar span, .topBar a {
+  color: #006064;
 }
 
 .row {
