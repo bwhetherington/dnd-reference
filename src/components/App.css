@@ -16,6 +16,8 @@ h4,
 h5,
 h6 {
   font-family: "Aleo", serif;
+  margin-top: 40px;
+  margin-bottom: 0px;
 }
 
 h1,
@@ -49,10 +51,13 @@ h4 {
 h5,
 h6 {
   margin: 0px;
-  font-size: 1em;
+  font-size: 1.1em;
+  /* font-family: inherit; */
 }
 
 h6 {
+  font-size: 1em;
+  font-family: inherit;
   font-weight: normal;
 }
 
