@@ -29,3 +29,11 @@ export function scrollTo(node) {
     window.scroll(0, scrollY - HEADER_SIZE);
   }
 }
+
+export function getPageName(text) {
+  const breadcrumbs = text.split(' > ');
+  const { length } = breadcrumbs;
+  if (length) {
+    return breadcrumbs[length - 1];
+  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import htmlParser from "react-markdown/plugins/html-parser";
 import Loading from "./Loading";
-import { scrollTo, flatten } from "../util";
+import { scrollTo, flatten, getPageName } from "../util";
 import "./Markdown.css";
 
 const parseHtml = htmlParser({
@@ -91,7 +91,8 @@ export default class Markdown extends React.Component {
         const header = document.getElementById('topBar');
         if (header) {
           const text = header.innerText;
-          document.title = text;
+          const title = getPageName(text);
+          document.title = title;
         }
       }
     } catch (err) {

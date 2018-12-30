@@ -1,6 +1,7 @@
 import React from 'react';
 import Markdown from './Markdown';
 import queryString from 'query-string';
+import Page from './Page';
 import './App.css';
 
 function App(props) {
@@ -8,9 +9,19 @@ function App(props) {
   const { url } = queryString.parse(search);
 
   if (typeof url === 'string') {
-    return <div className="page"><Markdown url={url} /></div>;
+    return (
+      <Page>
+        <Markdown url={url} />
+      </Page>
+    );
   } else {
-    return <div className="page"><div className="error">Please enter a valid URL</div></div>;
+    return (
+      <Page>
+        <div className="error">
+          Please enter a valid URL
+        </div>
+      </Page>
+    );
   }
 }
 

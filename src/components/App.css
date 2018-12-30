@@ -5,6 +5,9 @@ body {
   width: 100%;
   height: 100%;
   margin: 0px;
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
 }
 
 h1,
@@ -116,4 +119,24 @@ blockquote {
 .loading, .error {
   text-align: center;
   font-size: 2em;
+  padding-bottom: 65px;
+}
+
+.footerContainer {
+  max-width: 1000px;
+  padding: 2em;
+  margin: auto;
+  text-align: center;
+}
+
+.page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 1em;
+  padding-top: 65px;
+}
+
+.pageContainer {
+  width: 100%;
+  background: white
 }
