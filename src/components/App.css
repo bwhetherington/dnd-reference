@@ -123,9 +123,9 @@ blockquote {
   border-left: 6px solid #428e92;
   margin: 0px;
   padding: 1px;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin: 1em;
 }
 
 blockquote h1, blockquote h2, blockquote h3, blockquote h4 {

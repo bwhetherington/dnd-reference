@@ -27,7 +27,7 @@
 }
 
 .tableContainer {
-  margin: 1em;
+  margin: 0.5em;
   max-width: 100%;
   overflow-x: auto;
 }
