@@ -69,11 +69,20 @@ export default class Markdown extends React.Component {
         ...this.state,
         markdown
       });
+
+      // Scroll to anchor
       if (anchor !== undefined) {
         const node = document.getElementById(anchor);
         if (node !== null && node !== undefined) {
           scrollTo(node);
         }
+      }
+
+      // Set title based on header
+      const header = document.getElementById('topBar');
+      if (header) {
+        const text = header.innerText;
+        document.title = text;
       }
     } catch (err) {
       console.log(err);

@@ -1,4 +1,4 @@
-.topBar {
+#topBar {
   background: #f7f7f7;
   position: fixed !important;
   top: 0;
@@ -24,7 +24,7 @@
   padding-top: 65px;
 }
 
-.topBar span, .topBar a {
+#topBar span, #topBar a {
   color: #006064;
 }
 
