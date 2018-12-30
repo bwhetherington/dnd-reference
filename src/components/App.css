@@ -74,11 +74,11 @@ th {
 }
 
 blockquote table {
-  border: 2px solid #C3C3C3;
+  border: 2px solid #CECECE;
 }
 
 blockquote th {
-  border-bottom: 2px solid #C3C3C3;
+  border-bottom: 2px solid #CECECE;
 }
 
 th,
@@ -115,7 +115,7 @@ hr {
 }
 
 blockquote hr {
-  background: #C3C3C3;
+  background: #CECECE;
 }
 
 blockquote {
@@ -129,7 +129,7 @@ blockquote {
 }
 
 blockquote h1, blockquote h2, blockquote h3, blockquote h4 {
-  border-bottom: 2px solid #C3C3C3;
+  border-bottom: 2px solid #CECECE;
 }
 
 .loading, .error {
