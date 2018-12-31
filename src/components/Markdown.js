@@ -61,7 +61,7 @@ export default class Markdown extends React.Component {
 
   async componentDidMount() {
     try {
-      const { url } = this.props;
+      const { url, cached } = this.props;
       const [href, anchor] = url.split(/#/);
       const response = await fetch(href);
       const markdown = await response.text();
@@ -93,6 +93,12 @@ export default class Markdown extends React.Component {
           const text = header.innerText;
           const title = getPageName(text);
           document.title = title;
+        }
+
+        console.log(this.props);
+
+        if (cached) {
+          localStorage.toc = url;
         }
       }
     } catch (err) {
