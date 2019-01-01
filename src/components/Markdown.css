@@ -5,19 +5,23 @@
   width: 150vw;
   margin-left: -25vw;
   padding-left: 25vw;
-  padding-top: 10;
-  padding-bottom: 10;
-  /* color: white; */
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   float: center;
   border-bottom: 2px solid #dee4eb;
   z-index: 100;
   color: rgba(0, 0, 0, 0.3);
-  font-family: 'Aleo';
+  font-family: "Aleo", serif;
   font-size: 1.2em;
   font-weight: bold;
 }
 
-#topBar span, #topBar a {
+#topBar p {
+  margin: 0;
+}
+
+#topBar span,
+#topBar a {
   color: #006064;
 }
 

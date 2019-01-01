@@ -7,7 +7,7 @@ body {
   margin: 0px;
   display: flex;
   flex-direction: column;
-  background: #E6E6E6;
+  background: #e6e6e6;
 }
 
 h1,
@@ -74,11 +74,11 @@ th {
 }
 
 blockquote table {
-  border: 2px solid #CECECE;
+  border: 2px solid #cecece;
 }
 
 blockquote th {
-  border-bottom: 2px solid #CECECE;
+  border-bottom: 2px solid #cecece;
 }
 
 th,
@@ -115,7 +115,7 @@ hr {
 }
 
 blockquote hr {
-  background: #CECECE;
+  background: #cecece;
 }
 
 blockquote {
@@ -128,11 +128,15 @@ blockquote {
   margin: 1em;
 }
 
-blockquote h1, blockquote h2, blockquote h3, blockquote h4 {
-  border-bottom: 2px solid #CECECE;
+blockquote h1,
+blockquote h2,
+blockquote h3,
+blockquote h4 {
+  border-bottom: 2px solid #cecece;
 }
 
-.loading, .error {
+.loading,
+.error {
   text-align: center;
   font-size: 2em;
   padding-bottom: 65px;
@@ -154,10 +158,10 @@ blockquote h1, blockquote h2, blockquote h3, blockquote h4 {
 
 .pageContainer {
   width: 100%;
-  background: white
+  background: white;
 }
 
-input[type=text] {
+input[type="text"] {
   border: none;
   border-bottom: 2px solid #dee4eb;
   padding: 5px;
@@ -165,20 +169,23 @@ input[type=text] {
 
 button {
   border: 2px solid #dee4eb;
-  background: #f2f2f2;
+  background: rgba(0, 0, 0, 0.03);
   color: #006064;
   padding: 5px;
+  border-radius: 5px;
 }
 
 button:hover {
-  background: #d4dae0;
+  background: rgba(0, 0, 0, 0.06);
+  border-color: #c5cbd2;
 }
 
 button:active {
-  background: #d4dae0;
+  background: rgba(0, 0, 0, 0.1);
 }
 
-input[type=text]:focus, button:focus {
+input[type="text"]:focus,
+button:focus {
   border-color: #006064;
   outline: none;
 }

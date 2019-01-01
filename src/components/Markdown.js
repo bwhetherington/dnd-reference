@@ -66,7 +66,7 @@ export default class Markdown extends React.Component {
       const response = await fetch(href);
       const markdown = await response.text();
 
-      if (markdown.startsWith('<!DOCTYPE html>')) {
+      if (markdown.startsWith("<!DOCTYPE html>")) {
         // Page was not found
         this.setState({
           ...this.state,
@@ -78,7 +78,7 @@ export default class Markdown extends React.Component {
           ...this.state,
           markdown
         });
-  
+
         // Scroll to anchor
         if (anchor !== undefined) {
           const node = document.getElementById(anchor);
@@ -86,9 +86,9 @@ export default class Markdown extends React.Component {
             scrollTo(node);
           }
         }
-  
+
         // Set title based on header
-        const header = document.getElementById('topBar');
+        const header = document.getElementById("topBar");
         if (header) {
           const text = header.innerText;
           const title = getPageName(text);
