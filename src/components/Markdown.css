@@ -1,4 +1,4 @@
-#topBar {
+header {
   background: #f2f2f2;
   position: fixed !important;
   top: 0;
@@ -16,12 +16,12 @@
   font-weight: bold;
 }
 
-#topBar p {
+header p {
   margin: 0;
 }
 
-#topBar span,
-#topBar a {
+header span,
+header a {
   color: #006064;
 }
 
