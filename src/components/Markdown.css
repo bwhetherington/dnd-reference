@@ -22,7 +22,7 @@ header p {
 
 header span,
 header a {
-  color: #006064;
+  color: #006064 !important;
 }
 
 .row {
