@@ -16,6 +16,10 @@
   font-weight: bold;
 }
 
+ul {
+  margin: 0px;
+}
+
 #topBar p {
   margin: 0;
 }
@@ -36,11 +40,8 @@
   overflow-x: auto;
 }
 
-/* .section {
-  column-count: 2;
+.section {
+  columns: 400px 2;
+  display: block;
+  padding: 10px;
 }
-
-ul > li {
-  display: inline-block;
-  width: 100%;
-} */
