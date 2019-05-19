@@ -1,4 +1,4 @@
-#topBar {
+header {
   background: #f2f2f2;
   position: fixed !important;
   top: 0;
@@ -24,9 +24,9 @@ ul {
   margin: 0;
 }
 
-#topBar span,
-#topBar a {
-  color: #006064;
+header span,
+header a {
+  color: #006064 !important;
 }
 
 .row {
