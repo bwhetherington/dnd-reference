@@ -41,7 +41,7 @@ header a {
 }
 
 .section {
-  columns: 200px 4;
+  columns: 300px 3;
   display: block;
   padding: 10px;
 }
