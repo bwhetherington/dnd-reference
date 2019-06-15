@@ -32,29 +32,42 @@ function HeadingRenderer(props) {
 
 function LinkRenderer(props) {
   const { href, children } = props;
-  const [url, hash] = href.split(/#/);
-  const [baseUrl] = url.split(/\?/);
-  if (
-    typeof baseUrl === "string" &&
-    (baseUrl.endsWith(".md") || baseUrl.endsWith(".html"))
-  ) {
-    const encodedURI = encodeURIComponent(href);
-    const { origin, pathname } = window.location;
-    const newHref =
-      hash !== undefined
-        ? `${origin}${pathname}?url=${encodedURI}#${hash}`
-        : `${origin}${pathname}?url=${encodedURI}`;
-    const onClick = () => {
-      window.location.href = newHref;
-    };
-    return (
-      <span className="link" onClick={onClick}>
-        {children}
-      </span>
-    );
+  const newHref = hrefReplacer(href);
+  return <a href={newHref}>{children}</a>;
+}
+
+const LINK_REGEX = /href="(.*(md|html)(\?.*)?)"/gm;
+
+function getBaseUrl() {
+  const { origin, pathname } = window.location;
+  return `${origin}${pathname}`;
+}
+
+function hrefReplacer(href) {
+  const local = getBaseUrl();
+  const base = removeParameters(href);
+  if (base.endsWith(".md") || base.endsWith(".html")) {
+    const encodedHref = encodeURIComponent(href);
+    // const section = hash !== "" ? `#${hash}` : "";
+    return `${local}?url=${encodedHref}`;
   } else {
-    return <a href={href}>{props.children}</a>;
+    return href;
   }
+}
+
+function htmlLinkRenderer(source) {
+  if (source === null) {
+    return "";
+  } else {
+    return source.replace(
+      LINK_REGEX,
+      (_, href) => `href=${hrefReplacer(href)}`
+    );
+  }
+}
+
+function removeParameters(url) {
+  return url.split(/\?/)[0];
 }
 
 export default class Markdown extends React.Component {
@@ -98,8 +111,6 @@ export default class Markdown extends React.Component {
           document.title = title;
         }
 
-        console.log(this.props);
-
         if (cached) {
           localStorage.toc = url;
         }
@@ -125,8 +136,9 @@ export default class Markdown extends React.Component {
           </pre>
         </div>
       );
-    } else if (this.props.url.endsWith(".html")) {
-      return ReactHtmlParser(markdown);
+    } else if (removeParameters(this.props.url).endsWith(".html")) {
+      const html = htmlLinkRenderer(markdown);
+      return ReactHtmlParser(html);
     } else if (markdown !== null && markdown !== undefined) {
       const renderers = {
         heading: HeadingRenderer,
