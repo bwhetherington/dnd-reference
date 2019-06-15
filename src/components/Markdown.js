@@ -34,7 +34,10 @@ function LinkRenderer(props) {
   const { href, children } = props;
   const [url, hash] = href.split(/#/);
   const [baseUrl] = url.split(/\?/);
-  if (typeof baseUrl === "string" && baseUrl.endsWith(".md")) {
+  if (
+    typeof baseUrl === "string" &&
+    (baseUrl.endsWith(".md") || baseUrl.endsWith(".html"))
+  ) {
     const encodedURI = encodeURIComponent(href);
     const { origin, pathname } = window.location;
     const newHref =
