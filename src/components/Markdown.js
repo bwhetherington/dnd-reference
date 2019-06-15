@@ -1,4 +1,5 @@
 import React from "react";
+import ReactHtmlParser from "react-html-parser";
 import ReactMarkdown from "react-markdown";
 import htmlParser from "react-markdown/plugins/html-parser";
 import Loading from "./Loading";
@@ -67,7 +68,6 @@ export default class Markdown extends React.Component {
       const markdown = await response.text();
 
       if (markdown.startsWith("<!DOCTYPE html>")) {
-        // Page was not found
         this.setState({
           ...this.state,
           error: true
@@ -122,6 +122,8 @@ export default class Markdown extends React.Component {
           </pre>
         </div>
       );
+    } else if (this.props.url.endsWith(".html")) {
+      return ReactHtmlParser(markdown);
     } else if (markdown !== null && markdown !== undefined) {
       const renderers = {
         heading: HeadingRenderer,
