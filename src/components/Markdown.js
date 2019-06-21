@@ -1,10 +1,26 @@
 import React from "react";
 import ReactHtmlParser from "react-html-parser";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdownBase from "react-markdown";
 import htmlParser from "react-markdown/plugins/html-parser";
+import RemarkMathPlugin from "remark-math";
+import { InlineMath, BlockMath } from "react-katex";
 import Loading from "./Loading";
 import { scrollTo, flatten, getPageName } from "../util";
 import "./Markdown.css";
+import "katex/dist/katex.min.css";
+
+function ReactMarkdown({ plugins = [], renderers = {}, ...rest }) {
+  const props = {
+    plugins: [RemarkMathPlugin, ...plugins],
+    renderers: {
+      math: ({ value }) => <BlockMath>{value}</BlockMath>,
+      inlineMath: ({ value }) => <InlineMath>{value}</InlineMath>,
+      ...renderers
+    },
+    ...rest
+  };
+  return <ReactMarkdownBase {...props} />;
+}
 
 const parseHtml = htmlParser({
   isValidNode: node => node.type !== "script"
